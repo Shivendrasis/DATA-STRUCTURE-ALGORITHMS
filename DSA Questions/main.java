@@ -1,4 +1,6 @@
 //!DSA Using Java
+import java.util.Arrays;
+
 
 // !Question-1. Implement Bubble sort such that it will work in O(n) time for best case.
 
@@ -47,6 +49,8 @@
  * }
  */
 
+
+
 // !Question 2. Differentiate between linear search and binary search.
 
 // ? Definition : Linear search searches elements ffrom the beginning to the
@@ -63,6 +67,8 @@
 // best case: O(1)
 // avg case: O(log n)
 // worst case: O(log n)
+
+
 
 // !Question 3. Implement insertion sort and write down its time and space
 // complexity analysis.
@@ -104,6 +110,8 @@
  * }
  */
 
+
+
 // !Question 4. Differentiate between array and linked list.
 
 // ? Definition : Array is a collection of elements store in contigious memory
@@ -122,6 +130,8 @@
 // Doubly linked list
 // Circular linked list
 // Singly doubly linked list
+
+
 
 // !Question 5. Write down the code to check if given string is Palindrome.
 
@@ -150,9 +160,9 @@
  * }
  */
 
-// !Question 6. Write down the code to delete middle element of given array.
 
-import java.util.Arrays;
+
+// !Question 6. Write down the code to delete middle element of given array.
 
 /*
  * public class main {
@@ -177,9 +187,9 @@ import java.util.Arrays;
  * }
  */
 
-// !Question 7. Implement the push and pop operation of stack using singly
-// linked list.
 
+
+// !Question 7. Implement the push and pop operation of stack using singly linked list.
 /*
  * class Node {
  * int data;
@@ -251,8 +261,9 @@ import java.util.Arrays;
  * }
  */
 
-// !Question 8. Explain the time and space complexity of all the iterative
-// sorting algorithms.
+
+
+// !Question 8. Explain the time and space complexity of all the iterative sorting algorithms.
 
 // ?Bubble sort :
 
@@ -274,3 +285,91 @@ import java.util.Arrays;
 // portion.
 // Average Case: O(n²).
 // Worst Case: O(n²).
+
+
+
+//!Question 9. Write a code to  remove nth node from end of the list.
+
+public class main {
+
+   static class node{
+        //attributes
+        int data;
+        node next;
+
+       //constructor
+       node(int data){
+        this.data = data;
+        this.next = null;
+       }
+    }
+
+    public static node head;
+    public static node tail;
+
+    static void insertFirst(int data){
+
+        node newNode = new node(data);
+       if(head == null){
+        head = tail = newNode;
+        return;
+       }
+       newNode.next = head;
+       head = newNode;
+    }
+
+    static void removeNthElement(int n){
+ 
+        //calculate size
+        int size = 0;
+        node temp = head;
+        while (temp != null) {
+            temp = temp.next;
+             size++;
+        }
+
+        if(size == n){
+           head = head.next;
+           return;
+        }
+
+        int index = 1;
+        int indexFind = size-n;
+        node prev = head;
+        while (index < indexFind){
+            prev = prev.next;
+            index++;
+        }
+        prev.next = prev.next.next;
+        return;
+    }
+
+
+    static void printList(){
+
+       if(head == null){
+        System.out.println("List is empty");
+       }
+       while(head != null){
+        System.out.print(head.data + " -> " );
+        head = head.next;
+       }System.out.println("null");
+    }
+
+    @SuppressWarnings("static-access")
+    public static void main(String[] args) {
+        
+        main ll = new main();
+
+        ll.insertFirst(2);
+        ll.insertFirst(4);
+        ll.insertFirst(6);
+        ll.insertFirst(8);
+
+       
+        
+        ll.removeNthElement(3);
+        ll.printList();
+        
+    }
+}
