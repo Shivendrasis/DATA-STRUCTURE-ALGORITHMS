@@ -96,7 +96,7 @@ public class DoublyLinkedList {
 
 
        // System.out.println("Before reverse : ");
-        printData();
+       // printData();
 
        // System.out.println("After reverse : ");
        // DLL.reverseList();
