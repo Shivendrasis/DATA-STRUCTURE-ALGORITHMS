@@ -316,7 +316,7 @@ import java.util.Scanner;
  * }
  */
 
-// !-------------------parirs of element of array----------------11
+// !-------------------parirs of element of array---------------11
 /*
  * public class Array {
  * 
