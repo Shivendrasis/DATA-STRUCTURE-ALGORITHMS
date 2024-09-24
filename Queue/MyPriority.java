@@ -1,9 +1,6 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-/**
- * MyPriority
- */
 public class MyPriority {
 
     public static class Politicians implements Comparable<Politicians> { // Override
