@@ -1,6 +1,7 @@
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
+
 public class MyPriority {
 
     public static class Politicians implements Comparable<Politicians> { // Override
@@ -31,6 +32,7 @@ public class MyPriority {
         pq.add(new Politicians(" NCP ", 59));
 
         while (!pq.isEmpty()) {
+
             System.out.print(pq.peek().name + " -> " + pq.peek().vots);
             pq.remove();
             System.out.println();
