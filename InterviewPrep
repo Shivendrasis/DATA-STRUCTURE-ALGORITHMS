@@ -10,3 +10,27 @@
                map.put(ch,1);
            } }
        System.out.println(map);
+
+
+//2.Print prime number in given array
+public static boolean isPrime(int n){
+        
+        //base cases 
+        if(n <= 1) return false; //1 is not prime
+        if(n == 2) return true; //2 is prime
+        
+        //print from 2 to n
+        for(int i=2; i<n; i++){
+            if(n % i == 0){
+                return false;
+            }  }
+       return true;
+    }
+    
+    public static void main(String[] args) {
+      int arr[] = {4, 2, 1, 9, 5, 7, 11, 15};
+      
+      for(int num : arr){
+      System.out.println(isPrime(num)) ;
+      }
+    }
